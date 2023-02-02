@@ -13,7 +13,8 @@ import streamlit as st
 import pandas as pd
 #from sklearn.model_selection import train_test_split
 #from sklearn.preprocessing import  LabelEncoder
-import xgboost as xgb
+#import xgboost as xgb
+from xgboost import XGBRegressor as xgb
 import numpy as np
 st.header("Rossmann Sales Prediction App")
 st.text_input("Enter your Name: ", key="name")

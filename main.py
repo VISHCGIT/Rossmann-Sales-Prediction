@@ -5,6 +5,7 @@ import pandas as pd
 import xgboost as xgb
 #from xgboost import XGBRegressor
 import numpy as np
+import re
 st.header("Rossmann Sales Prediction App")
 st.text_input("Enter your Name: ", key="name")
 data = pd.read_csv("https://raw.githubusercontent.com/gurokeretcha/WishWeightPredictionApplication/master/Fish.csv")
@@ -19,6 +20,13 @@ best_xgboost_model = xgb.XGBRegressor()
 if st.checkbox('Show Training Dataframe'):
     data
 
+collect_numbers = lambda x : [int(i) for i in re.split("[^0-9]", x) if i != ""]
+
+numbers = st.text_input("PLease enter numbers")
+st.write(collect_numbers(numbers))
+
+fixed_numbers = st.multiselect("Please select numbers", [1, 2, 3, 4, 5])
+st.write(fixed_numbers)
 
 features = ["DayOfWeek","DayOfWeekName","MonthName","Customers","Promo","StateHoliday","SchoolHoliday","StoreType","Assortment","CompetitionDistance","CompetitionOpenSinceMonth","Promo2SinceWeek","PromoInterval"]
 value = []

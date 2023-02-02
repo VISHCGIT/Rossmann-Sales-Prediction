@@ -39,7 +39,7 @@ with left_column:
 
 features = ["DayOfWeek","DayOfWeekName","MonthName","Customers","Promo","StateHoliday","SchoolHoliday","StoreType","Assortment","CompetitionDistance","CompetitionOpenSinceMonth","Promo2SinceWeek","PromoInterval"]
 value = []
-for i in range len(features):
+for i in range(len(features)):
     number = st.number_input("Enter the values for " +features[i])
     value.append(number)
 

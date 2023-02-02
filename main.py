@@ -21,7 +21,7 @@ if st.checkbox('Show Training Dataframe'):
     data
 
 date1 = st.date_input("enter date:")
-    
+st.Write(date1.dt.year)
 collect_numbers = lambda x : [int(i) for i in re.split("[^0-9]", x) if i != ""]
 
 numbers = st.text_input("PLease enter numbers")

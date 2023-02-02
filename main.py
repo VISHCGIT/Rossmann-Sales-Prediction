@@ -13,7 +13,7 @@ import streamlit as st
 import pandas as pd
 #from sklearn.model_selection import train_test_split
 #from sklearn.preprocessing import  LabelEncoder
-#import xgboost as xgb
+import xgboost as xgb
 #from xgboost import XGBRegressor
 import numpy as np
 st.header("Rossmann Sales Prediction App")
@@ -37,11 +37,6 @@ for i in range(len(features)):
     number = st.number_input("Enter the values for " +features[i])
     value.append(number)
 
-input_Length1 = st.slider('Vertical length(cm)', 0.0, max(data["Length1"]), 1.0)
-input_Length2 = st.slider('Diagonal length(cm)', 0.0, max(data["Length2"]), 1.0)
-input_Length3 = st.slider('Cross length(cm)', 0.0, max(data["Length3"]), 1.0)
-input_Height = st.slider('Height(cm)', 0.0, max(data["Height"]), 1.0)
-input_Width = st.slider('Diagonal width(cm)', 0.0, max(data["Width"]), 1.0)
 
 """if st.button('Make Prediction'):
     input_species = encoder.transform(np.expand_dims(inp_species, -1))

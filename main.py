@@ -30,12 +30,6 @@ data = pd.read_csv("https://raw.githubusercontent.com/gurokeretcha/WishWeightPre
 if st.checkbox('Show Training Dataframe'):
     data
 
-st.subheader("Please select relevant features of your fish!")
-left_column, right_column = st.columns(2)
-with left_column:
-    inp_species = st.radio(
-        'Name of the fish:',
-        np.unique(data['Species']))
 
 features = ["DayOfWeek","DayOfWeekName","MonthName","Customers","Promo","StateHoliday","SchoolHoliday","StoreType","Assortment","CompetitionDistance","CompetitionOpenSinceMonth","Promo2SinceWeek","PromoInterval"]
 value = []

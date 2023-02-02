@@ -37,6 +37,11 @@ with left_column:
         'Name of the fish:',
         np.unique(data['Species']))
 
+features = ["DayOfWeek","DayOfWeekName","MonthName","Customers","Promo","StateHoliday","SchoolHoliday","StoreType","Assortment","CompetitionDistance","CompetitionOpenSinceMonth","Promo2SinceWeek","PromoInterval"]
+value = []
+for i in features:
+    number = st.number_input("Enter the values " +features[i])
+    value.append(number)
 
 input_Length1 = st.slider('Vertical length(cm)', 0.0, max(data["Length1"]), 1.0)
 input_Length2 = st.slider('Diagonal length(cm)', 0.0, max(data["Length2"]), 1.0)

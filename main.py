@@ -22,6 +22,9 @@ if st.checkbox('Show Training Dataframe'):
 
 date1 = st.date_input("enter date:")
 st.write(date1.year)
+st.write(date1.day)
+st.write(date1.week)
+st.write(date1.month)
 
 
 collect_numbers = lambda x : [int(i) for i in re.split("[^0-9]", x) if i != ""]

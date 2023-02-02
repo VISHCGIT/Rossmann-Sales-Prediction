@@ -26,7 +26,7 @@ st.write(date1.year)
 st.write(date1.day)
 st.write(date1.month)
 st.write(datetime.date(2010, 6, 16).isocalendar().week)
-st.write(datetime.date(2010, 6, 16).isocalendar().weekday())
+st.write(datetime.date(2010, 6, 16).weekday())
 
 collect_numbers = lambda x : [int(i) for i in re.split("[^0-9]", x) if i != ""]
 

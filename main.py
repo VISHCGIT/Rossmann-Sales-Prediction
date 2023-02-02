@@ -6,6 +6,7 @@ import xgboost as xgb
 #from xgboost import XGBRegressor
 import numpy as np
 import re
+import datetime
 st.header("Rossmann Sales Prediction App")
 st.text_input("Enter your Name: ", key="name")
 data = pd.read_csv("https://raw.githubusercontent.com/gurokeretcha/WishWeightPredictionApplication/master/Fish.csv")
@@ -24,6 +25,7 @@ date1 = st.date_input("enter date:")
 st.write(date1.year)
 st.write(date1.day)
 st.write(date1.month)
+st.write(datetime.date(date1).isocalendar().week)
 
 
 collect_numbers = lambda x : [int(i) for i in re.split("[^0-9]", x) if i != ""]

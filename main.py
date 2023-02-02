@@ -24,7 +24,7 @@ data = pd.read_csv("https://raw.githubusercontent.com/gurokeretcha/WishWeightPre
 #encoder.classes_ = np.load('classes.npy',allow_pickle=True)
 
 # load model
-#best_xgboost_model = xgb.XGBRegressor()
+best_xgboost_model = xgb.XGBRegressor()
 #best_xgboost_model.load_model("best_model.json")
 
 if st.checkbox('Show Training Dataframe'):

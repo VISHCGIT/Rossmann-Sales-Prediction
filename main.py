@@ -12,14 +12,14 @@ Original file is located at
 import streamlit as st
 import pandas as pd
 #from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import  LabelEncoder
+#from sklearn.preprocessing import  LabelEncoder
 import xgboost as xgb
 import numpy as np
 st.header("Rossmann Sales Prediction App")
 st.text_input("Enter your Name: ", key="name")
 data = pd.read_csv("https://raw.githubusercontent.com/gurokeretcha/WishWeightPredictionApplication/master/Fish.csv")
 #load label encoder
-encoder = LabelEncoder()
+#encoder = LabelEncoder()
 #encoder.classes_ = np.load('classes.npy',allow_pickle=True)
 
 # load model

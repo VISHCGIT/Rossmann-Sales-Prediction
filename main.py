@@ -21,7 +21,7 @@ best_xgboost_model = xgb.XGBRegressor()
 if st.checkbox('Show Training Dataframe'):
     data
 
-Store = int(st.number_input("Enter the Store Number (1 to 1115): "));
+Store = int(st.text_input("Enter the Store Number (1 to 1115): "));
 date1 = st.date_input("Enter Date, on Sales forecast needed:")
 Day =  date1.day
 Year =  date1.year

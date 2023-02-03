@@ -37,7 +37,7 @@ StateHoliday = st.text_input("If above selected Date is, enter a for public holi
 SchoolHoliday = st.text_input("On above selected Date Sales will be affected, Enter 1 for yes, 0 for No")
 CompetitionDistance = st.number_input("How far away (meters) competitor from the Store "+str(Store))
 Promo = st.number_input("Enter the values for Promo (0 or 1) ")
-Promo2 = st.number_input("Enter the values for Promo (0 or 1) ")
+Promo2 = st.number_input("Enter the values for Promo2 (0 or 1) ")
 
 
 

@@ -9,7 +9,7 @@ import re
 import datetime
 st.header("Rossmann Sales Prediction App")
 st.text_input("Enter your Name: ", key="name")
-st.write(os.getcwd())
+#st.write(os.getcwd())
 #os.chdir(r"C:\Users\us1145\Desktop\DataFrames/")
 #home = os.environ
 #st.write(home)

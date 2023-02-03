@@ -21,27 +21,19 @@ best_xgboost_model = xgb.XGBRegressor()
 if st.checkbox('Show Training Dataframe'):
     data
 
-date1 = st.date_input("enter date:")
-st.write(date1.year)
-st.write(date1.day)
-st.write(date1.month)
-st.write(datetime.date(2010, 6, 16).isocalendar().week)
-st.write(datetime.date(2010, 6, 16).weekday())
-st.write(datetime.date(2010, 6, 16).isoweekday())
+Store = int(st.number_input("Enter the Store Number (1 to 1115): "));
+date1 = st.date_input("Enter Date, on Sales forecast needed:")
+Year, Promo2SinceYear, CompetitionOpenSinceYear = date1.year
+Month, CompetitionOpenSinceMonth = date1.month
+Week, Promo2SinceWeek  = datetime.date(date1).isocalendar().week
+#1 to 7 (Europe Week start day and end day, Mon and Sun) based on Date.
+DayOfWeek = datetime.date(date1).isoweekday()
+StateHoliday = st.text_input("If above selected Date is, enter a for public holiday, b for Easter holiday, c for Christmas, 0 for None")
+SchoolHoliday = st.text_input("On above selected Date Sales will be affected, Enter 1 for yes, 0 for No")
+CompetitionDistance = st.number_input("How far away (meters) competitor from the Store "+Store)
+Promo = st.number_input("Enter the values for Promo (0 or 1) ")
+Promo2 = st.number_input("Enter the values for Promo (0 or 1) ")
 
-collect_numbers = lambda x : [int(i) for i in re.split("[^0-9]", x) if i != ""]
-
-numbers = st.text_input("PLease enter numbers")
-st.write(collect_numbers(numbers))
-
-fixed_numbers = st.multiselect("Please select numbers", [1, 2, 3, 4, 5])
-st.write(fixed_numbers)
-
-features = ["DayOfWeek","DayOfWeekName","MonthName","Customers","Promo","StateHoliday","SchoolHoliday","StoreType","Assortment","CompetitionDistance","CompetitionOpenSinceMonth","Promo2SinceWeek","PromoInterval"]
-value = []
-for i in range(len(features)):
-    number = st.number_input("Enter the values for " +features[i])
-    value.append(number)
 
 
 """if st.button('Make Prediction'):

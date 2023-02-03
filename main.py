@@ -23,7 +23,7 @@ if st.checkbox('Show Training Dataframe'):
 
 Store = int(st.number_input("Enter the Store Number (1 to 1115): "));
 date1 = st.date_input("Enter Date, on Sales forecast needed:")
-Day =  date1.Day
+Day =  date1.day
 Year =  date1.year
 Promo2SinceYear =  date1.year
 CompetitionOpenSinceYear = date1.year

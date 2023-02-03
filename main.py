@@ -9,6 +9,8 @@ import re
 import datetime
 st.header("Rossmann Sales Prediction App")
 st.text_input("Enter your Name: ", key="name")
+from google.colab import drive
+drive.mount('/content/drive')
 #data = pd.read_csv("https://raw.githubusercontent.com/gurokeretcha/WishWeightPredictionApplication/master/Fish.csv")
 data = pd.read_csv("https://drive.google.com/file/d/1uTu84MB4Lgkl5WwGbulctw_R69Z-asLW/view?usp=share_link")
 #load label encoder

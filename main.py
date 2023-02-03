@@ -42,8 +42,8 @@ Promo = st.text_input("Enter the values for Promo (0 or 1) ")
 Promo2 = st.text_input("Enter the values for Promo2 (0 or 1) ")
 
 Query_data = []
-Features = [Store,"DayOfWeek","Promo","StateHoliday","SchoolHoliday"]
-#,"StoreType","Assortment","CompetitionDistance","CompetitionOpenSinceMonth","CompetitionOpenSinceYear","Promo2","Promo2SinceWeek","Promo2SinceYear","PromoInterval","Year","Month","Week","PerCentDiseaseAffInWeek","AvgSalesPerStore","AvgCustomersPerStore","MedSalesPerStore","MedCustomersPerStore","AvgCustSpentInStore","LastWeekSalesPerStore","LastWeekCustomersPerStore"]
+Features = [Store,DayOfWeek,Promo,StateHoliday,SchoolHoliday]
+#,StoreType,Assortment,CompetitionDistance,CompetitionOpenSinceMonth,CompetitionOpenSinceYear,Promo2,Promo2SinceWeek,Promo2SinceYear,PromoInterval,Year,Month,Week,PerCentDiseaseAffInWeek,AvgSalesPerStore,AvgCustomersPerStore,MedSalesPerStore,MedCustomersPerStore,AvgCustSpentInStore,LastWeekSalesPerStore,LastWeekCustomersPerStore]
 for ele in Features:
     Query_data.append(ele)
 st.write(Query_data)

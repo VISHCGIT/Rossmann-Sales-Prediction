@@ -9,7 +9,8 @@ import re
 import datetime
 st.header("Rossmann Sales Prediction App")
 st.text_input("Enter your Name: ", key="name")
-data = pd.read_csv("https://raw.githubusercontent.com/gurokeretcha/WishWeightPredictionApplication/master/Fish.csv")
+#data = pd.read_csv("https://raw.githubusercontent.com/gurokeretcha/WishWeightPredictionApplication/master/Fish.csv")
+data = pd.read_csv("https://drive.google.com/file/d/1uTu84MB4Lgkl5WwGbulctw_R69Z-asLW/view?usp=share_link")
 #load label encoder
 #encoder = LabelEncoder()
 #encoder.classes_ = np.load('classes.npy',allow_pickle=True)

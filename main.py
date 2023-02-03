@@ -23,9 +23,13 @@ if st.checkbox('Show Training Dataframe'):
 
 Store = int(st.number_input("Enter the Store Number (1 to 1115): "));
 date1 = st.date_input("Enter Date, on Sales forecast needed:")
-Year, Promo2SinceYear, CompetitionOpenSinceYear = date1.year
-Month, CompetitionOpenSinceMonth = date1.month
-Week, Promo2SinceWeek  = datetime.date(date1).isocalendar().week
+Year =  date1.year
+Promo2SinceYear =  date1.year
+CompetitionOpenSinceYear = date1.year
+Month = date1.month
+CompetitionOpenSinceMonth = date1.month
+Week = datetime.date(date1).isocalendar().week
+Promo2SinceWeek = datetime.date(date1).isocalendar().week
 #1 to 7 (Europe Week start day and end day, Mon and Sun) based on Date.
 DayOfWeek = datetime.date(date1).isoweekday()
 StateHoliday = st.text_input("If above selected Date is, enter a for public holiday, b for Easter holiday, c for Christmas, 0 for None")

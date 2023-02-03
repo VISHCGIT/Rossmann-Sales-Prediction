@@ -15,8 +15,8 @@ st.text_input("Enter your Name: ", key="name")
 #st.write(home)
 #st.write(os.getcwd())
 path_to_file = (r"C:\vish/")
-file_list = [f for f in listdir(path_to_file) if isfile(join(path_to_file, f))]
-file_select = st.sidebar.selectbox("Select a file", file_list)
+#file_list = [f for f in listdir(path_to_file) if isfile(join(path_to_file, f))]
+file_select = st.sidebar.selectbox("Select a file")
 st.sidebar.title("Load Dataset")
 if st.sidebar.button("Click to load data"):
     with st.spinner("Loading "+ file_select + " ..."):

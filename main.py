@@ -21,6 +21,8 @@ best_xgboost_model = xgb.XGBRegressor()
 if st.checkbox('Show Training Dataframe'):
     data
 
+
+
 Store = st.text_input("Enter the Store Number (1 to 1115): ");
 date1 = st.date_input("Enter Date, on Sales forecast needed:")
 Day =  date1.day
@@ -39,6 +41,12 @@ CompetitionDistance = st.text_input("How far away (meters) competitor from the S
 Promo = st.text_input("Enter the values for Promo (0 or 1) ")
 Promo2 = st.text_input("Enter the values for Promo2 (0 or 1) ")
 
+Query_data = []
+Features = ["Store","DayOfWeek","Promo","StateHoliday","SchoolHoliday"]
+#,"StoreType","Assortment","CompetitionDistance","CompetitionOpenSinceMonth","CompetitionOpenSinceYear","Promo2","Promo2SinceWeek","Promo2SinceYear","PromoInterval","Year","Month","Week","PerCentDiseaseAffInWeek","AvgSalesPerStore","AvgCustomersPerStore","MedSalesPerStore","MedCustomersPerStore","AvgCustSpentInStore","LastWeekSalesPerStore","LastWeekCustomersPerStore"]
+for ele in Features:
+    Query_data.append(ele)
+st.write(Query_data)
 
 
 """if st.button('Make Prediction'):

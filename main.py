@@ -9,21 +9,19 @@ import re
 import datetime
 st.header("Rossmann Sales Prediction App")
 st.text_input("Enter your Name: ", key="name")
-from google.colab import drive
-drive.mount('/content/drive')
-    st.write(os.getcwd())
-    #os.chdir(r"C:\Users\us1145\Desktop\DataFrames/")
-    #home = os.environ
-    #st.write(home)
-    #st.write(os.getcwd())
-    path_to_file = (r"C:\vish/")
-    file_list = [f for f in listdir(path_to_file) if isfile(join(path_to_file, f))]
-    file_select = st.sidebar.selectbox("Select a file", file_list)
-    st.sidebar.title("Load Dataset")
-    if st.sidebar.button("Click to load data"):
-        with st.spinner("Loading "+ file_select + " ..."):
-            time.sleep(20)
-        st.success("File loaded!")
+st.write(os.getcwd())
+#os.chdir(r"C:\Users\us1145\Desktop\DataFrames/")
+#home = os.environ
+#st.write(home)
+#st.write(os.getcwd())
+path_to_file = (r"C:\vish/")
+file_list = [f for f in listdir(path_to_file) if isfile(join(path_to_file, f))]
+file_select = st.sidebar.selectbox("Select a file", file_list)
+st.sidebar.title("Load Dataset")
+if st.sidebar.button("Click to load data"):
+    with st.spinner("Loading "+ file_select + " ..."):
+        time.sleep(20)
+    st.success("File loaded!")
 data = pd.read_csv("https://raw.githubusercontent.com/gurokeretcha/WishWeightPredictionApplication/master/Fish.csv")
 #data = pd.read_csv("https://drive.google.com/file/d/1uTu84MB4Lgkl5WwGbulctw_R69Z-asLW/view?usp=share_link")
 #load label encoder

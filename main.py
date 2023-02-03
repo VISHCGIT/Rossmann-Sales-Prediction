@@ -23,8 +23,8 @@ if st.checkbox('Show Training Dataframe'):
 
 
 
-Store = st.text_input("Enter the Store Number (1 to 1115): ");
-date1 = st.date_input("Enter Date, on Sales forecast needed:")
+Store = st.text_input("Store: Enter the Store Number (1 to 1115): ");
+date1 = st.date_input("Date: Enter date, on Sales forecast needed:")
 Day =  date1.day
 Year =  date1.year
 Promo2SinceYear =  date1.year
@@ -35,12 +35,12 @@ Week = datetime.date(Year, Month, Day).isocalendar().week
 Promo2SinceWeek = datetime.date(Year, Month, Day).isocalendar().week
 #1 to 7 (Europe Week start day and end day, Mon and Sun) based on Date.
 DayOfWeek = datetime.date(Year, Month, Day).isoweekday()
-StateHoliday = st.text_input("If above selected Date is, enter a for public holiday, b for Easter holiday, c for Christmas, 0 for None")
-SchoolHoliday = st.text_input("On above selected Date Sales will be affected, Enter 1 for yes, 0 for No")
-CompetitionDistance = st.text_input("How far away (meters) competitor from the Store "+str(Store))
-Promo = st.text_input("Enter the values for Promo (0 or 1) ")
-Promo2 = st.text_input("Enter the values for Promo2 (0 or 1) ")
-
+StateHoliday = st.text_input("StateHoliday: If above selected Date is, enter a for public holiday, b for Easter holiday, c for Christmas, 0 for None")
+SchoolHoliday = st.text_input("SchoolHoliday: On above selected Date Sales will be affected, Enter 1 for yes, 0 for No")
+CompetitionDistance = st.text_input("CompetitionDistance: How far away (meters) competitor from the Store "+str(Store))
+Promo = st.text_input("Promo: Enter a value(0 or 1) ")
+Promo2 = st.text_input("Promo2: Enter a value (0 or 1) ")
+PromoInterval = st.selectbox('PromoIntreval: Select one value from list', (['nan', 'Jan,Apr,Jul,Oct', 'Feb,May,Aug,Nov', 'Mar,Jun,Sept,Dec']))
 Query_data = []
 Features = [Store,DayOfWeek,Promo,StateHoliday,SchoolHoliday]
 #,StoreType,Assortment,CompetitionDistance,CompetitionOpenSinceMonth,CompetitionOpenSinceYear,Promo2,Promo2SinceWeek,Promo2SinceYear,PromoInterval,Year,Month,Week,PerCentDiseaseAffInWeek,AvgSalesPerStore,AvgCustomersPerStore,MedSalesPerStore,MedCustomersPerStore,AvgCustSpentInStore,LastWeekSalesPerStore,LastWeekCustomersPerStore]

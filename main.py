@@ -18,7 +18,7 @@ store_new_df = pd.read_csv(r"store_new_feat.csv")
 
 # load best model
 best_xgboost_model = xgb.XGBRegressor()
-best_xgboost_model.load_model("rassmann_best_model.bin")
+best_xgboost_model.load_model("rassmann_best_model.hdf5")
 
 if st.checkbox('Show Training Dataframe'):
     store_new_df

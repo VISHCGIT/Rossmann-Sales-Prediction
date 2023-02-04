@@ -10,7 +10,7 @@ import datetime
 st.header("Rossmann Sales Prediction App")
 
 #data = pd.read_csv("https://raw.githubusercontent.com/gurokeretcha/WishWeightPredictionApplication/master/Fish.csv")
-store_new_feat_df = pd.read_csv(r"store_new_feat.csv")
+store_new_df = pd.read_csv(r"store_new_feat.csv")
 #https://drive.google.com/file/d/1uTu84MB4Lgkl5WwGbulctw_R69Z-asLW/view?usp=share_link
 #load label encoder
 #encoder = LabelEncoder()
@@ -21,7 +21,7 @@ store_new_feat_df = pd.read_csv(r"store_new_feat.csv")
 #best_xgboost_model.load_model("best_model.json")
 
 if st.checkbox('Show Training Dataframe'):
-    store_new_feat_df
+    store_new_df
 
 Store = 112#st.text_input("Store: Enter the Store Number (1 to 1115): ")
 date1 = st.date_input("Date: Enter date, on Sales forecast needed:")

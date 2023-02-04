@@ -20,7 +20,7 @@ store_new_df = pd.read_csv(r"store_new_feat.csv")
 # load best model
 #best_xgboost_model = xgb.XGBRegressor()
 #best_xgboost_model.load_model("rassmann_best_model.pkl")
-best_xgboost_model = pickle.load(open('rassmann_best_model.pkl','wb'))
+best_xgboost_model = pickle.load(open('rassmann_best_model.pkl','rb'))
 
 if st.checkbox('Show Training Dataframe'):
     store_new_df

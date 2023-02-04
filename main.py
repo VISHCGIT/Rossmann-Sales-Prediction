@@ -17,8 +17,8 @@ store_new_df = pd.read_csv(r"store_new_feat.csv")
 #encoder.classes_ = np.load('classes.npy',allow_pickle=True)
 
 # load model
-#best_xgboost_model = xgb.XGBRegressor()
-#best_xgboost_model.load_model("best_model.json")
+best_xgboost_model = xgb.XGBRegressor()
+best_xgboost_model.load_model("rossmann_best_model.json")
 
 if st.checkbox('Show Training Dataframe'):
     store_new_df
@@ -61,13 +61,8 @@ Query_data = np.array(Query_data)
 Query_data = Query_data[np.newaxis,:]
 
 
-"""if st.button('Make Prediction'):
-    input_species = encoder.transform(np.expand_dims(inp_species, -1))
-    inputs = np.expand_dims(
-        [int(input_species), input_Length1, input_Length2, input_Length3, input_Height, input_Width], 0)
+if st.button('Make Prediction'):
     prediction = best_xgboost_model.predict(inputs)
-    print("final pred", np.squeeze(prediction, -1))
-    st.write(f"Your fish weight is: {np.squeeze(prediction, -1):.2f}g")
-
+    #print("final pred", prediction)
+    st.write(f"Sales Prediction for thr Store is: {prediction):.2f}g")
     st.write(f"Thank you {st.session_state.name}! I hope you liked it.")
-    st.write(f"If you want to see more advanced applications you can follow me on [medium](https://medium.com/@gkeretchashvili)")"""

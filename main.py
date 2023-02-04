@@ -64,5 +64,5 @@ Query_data = Query_data[np.newaxis,:]
 if st.button('Make Prediction'):
     prediction = best_xgboost_model.predict(inputs)
     #print("final pred", prediction)
-    st.write(f"Sales Prediction for thr Store is: {prediction):.2f}g")
+    st.write("Sales Prediction for thr Store is: "+prediction)
     st.write(f"Thank you {st.session_state.name}! I hope you liked it.")

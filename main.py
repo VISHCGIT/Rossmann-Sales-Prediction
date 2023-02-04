@@ -66,4 +66,4 @@ if st.button('Make Prediction'):
     prediction = 6325
     #best_xgboost_model.predict(Query_data)
     #print("final pred", prediction)
-    st.write("Sales Prediction for the Store is: "+str(prediction))
+    st.write("Sales Prediction for the Store is: "+str(prediction[-1]))

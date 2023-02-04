@@ -16,7 +16,7 @@ store_new_df = pd.read_csv(r"store_new_feat.csv")
 #encoder = LabelEncoder()
 #encoder.classes_ = np.load('classes.npy',allow_pickle=True)
 
-# load model
+# load best model
 best_xgboost_model = xgb.XGBRegressor()
 best_xgboost_model.load_model("rassmann_best_model.json")
 

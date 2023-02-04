@@ -7,6 +7,7 @@ import xgboost as xgb
 import numpy as np
 import re
 import datetime
+import pickle
 st.header("Rossmann Sales Prediction App")
 
 #data = pd.read_csv("https://raw.githubusercontent.com/gurokeretcha/WishWeightPredictionApplication/master/Fish.csv")
@@ -17,8 +18,9 @@ store_new_df = pd.read_csv(r"store_new_feat.csv")
 #encoder.classes_ = np.load('classes.npy',allow_pickle=True)
 
 # load best model
-best_xgboost_model = xgb.XGBRegressor()
-best_xgboost_model.load_model("rassmann_best_model.pkl")
+#best_xgboost_model = xgb.XGBRegressor()
+#best_xgboost_model.load_model("rassmann_best_model.pkl")
+best_xgboost_model = pickle.load(open('rassmann_best_model.pkl','rb'))
 
 if st.checkbox('Show Training Dataframe'):
     store_new_df

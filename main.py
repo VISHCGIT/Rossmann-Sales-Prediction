@@ -18,7 +18,7 @@ store_new_df = pd.read_csv(r"store_new_feat.csv")
 
 # load model
 best_xgboost_model = xgb.XGBRegressor()
-best_xgboost_model.load_model("rossmann_best_model.json")
+#best_xgboost_model.load_model("rossmann_best_model.json")
 
 if st.checkbox('Show Training Dataframe'):
     store_new_df
@@ -63,7 +63,8 @@ Query_data = Query_data[np.newaxis,:]
 
 
 if st.button('Make Prediction'):
-    prediction = 6325#best_xgboost_model.predict(Query_data)
+    prediction = 6325
+    #best_xgboost_model.predict(Query_data)
     #print("final pred", prediction)
     st.write("Sales Prediction for thr Store is: "+prediction)
     st.write(f"Thank you {st.session_state.name}! I hope you liked it.")

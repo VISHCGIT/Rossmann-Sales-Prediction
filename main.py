@@ -53,7 +53,8 @@ AvgCustSpentInStore = store_new_df.loc[store_new_df.Store == Store, 'AvgCustSpen
 LastWeekCustomersPerStore = store_new_df.loc[store_new_df.Store == Store, 'LastWeekCustomersPerStore'].values[0]
 
 Query_data = []
-Features = [Store,DayOfWeek,Promo,StateHoliday,SchoolHoliday,StoreType,Assortment,CompetitionDistance,CompetitionOpenSinceMonth,CompetitionOpenSinceYear,Promo2,Promo2SinceWeek,Promo2SinceYear,PromoInterval,Year,Month,Week,PerCentDiseaseAffInWeek,AvgSalesPerStore,AvgCustomersPerStore,MedSalesPerStore,MedCustomersPerStore,AvgCustSpentInStore,LastWeekCustomersPerStore]#LastWeekSalesPerStore
+Features = [Store,DayOfWeek,Promo,StateHoliday,SchoolHoliday,StoreType,Assortment,CompetitionDistance,CompetitionOpenSinceMonth,CompetitionOpenSinceYear,Promo2,Promo2SinceWeek,Promo2SinceYear,PromoInterval,Year,Month,Week,PerCentDiseaseAffInWeek,AvgSalesPerStore,AvgCustomersPerStore,MedSalesPerStore,MedCustomersPerStore,AvgCustSpentInStore,LastWeekCustomersPerStore]
+#LastWeekSalesPerStore
 for ele in Features:
     Query_data.append(ele)
 st.write(Query_data)

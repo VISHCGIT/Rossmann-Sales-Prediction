@@ -3,7 +3,6 @@ import pandas as pd
 #from sklearn.model_selection import train_test_split
 #from sklearn.preprocessing import  LabelEncoder
 import xgboost as xgb
-#from xgboost import XGBRegressor
 import numpy as np
 import re
 import datetime
@@ -46,10 +45,10 @@ if Store != "":
     AvgCustSpentInStore = store_new_df.loc[store_new_df.Store == Store, 'AvgCustSpentInStore'].values[0]
     #LastWeekSalesPerStore = store_new_df.loc[store_new_df.Store == Store, 'LastWeekSalesPerStore'].values[0]
     LastWeekCustomersPerStore = store_new_df.loc[store_new_df.Store == Store, 'LastWeekCustomersPerStore'].values[0]
+    Features = [Store,DayOfWeek,Promo,StateHoliday,SchoolHoliday,StoreType,Assortment,CompetitionDistance,CompetitionOpenSinceMonth,CompetitionOpenSinceYear,Promo2,Promo2SinceWeek,Promo2SinceYear,PromoInterval,Year,Month,Week,PerCentDiseaseAffInWeek,AvgSalesPerStore,AvgCustomersPerStore,MedSalesPerStore,MedCustomersPerStore,AvgCustSpentInStore,LastWeekCustomersPerStore]
+    #LastWeekSalesPerStore
 
 Query_data = []
-Features = [Store,DayOfWeek,Promo,StateHoliday,SchoolHoliday,StoreType,Assortment,CompetitionDistance,CompetitionOpenSinceMonth,CompetitionOpenSinceYear,Promo2,Promo2SinceWeek,Promo2SinceYear,PromoInterval,Year,Month,Week,PerCentDiseaseAffInWeek,AvgSalesPerStore,AvgCustomersPerStore,MedSalesPerStore,MedCustomersPerStore,AvgCustSpentInStore,LastWeekCustomersPerStore]
-#LastWeekSalesPerStore
 for ele in Features:
     Query_data.append(ele)
 st.write(Query_data)

@@ -48,12 +48,12 @@ if Store != "":
     Features = [Store,DayOfWeek,Promo,StateHoliday,SchoolHoliday,StoreType,Assortment,CompetitionDistance,CompetitionOpenSinceMonth,CompetitionOpenSinceYear,Promo2,Promo2SinceWeek,Promo2SinceYear,PromoInterval,Year,Month,Week,PerCentDiseaseAffInWeek,AvgSalesPerStore,AvgCustomersPerStore,MedSalesPerStore,MedCustomersPerStore,AvgCustSpentInStore,LastWeekCustomersPerStore]
     #LastWeekSalesPerStore
 
-Query_data = []
-for ele in Features:
-    Query_data.append(ele)
-st.write(Query_data)
-Query_data = np.array(Query_data)
-Query_data = Query_data[np.newaxis,:]
+    Query_data = []
+    for ele in Features:
+        Query_data.append(ele)
+    st.write(Query_data)
+    Query_data = np.array(Query_data)
+    Query_data = Query_data[np.newaxis,:]
 
 
 if st.button('Make Sales Prediction'):

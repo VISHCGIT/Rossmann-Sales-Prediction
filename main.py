@@ -15,7 +15,7 @@ store_new_df = pd.read_csv(r"store_new_feat.csv")
 #best_xgboost_model = xgb.XGBRegressor()
 #best_xgboost_model.load_model("rassmann_best_model.json")
 
-Store = ""
+Store = 112
 Store = st.text_input("Store: Enter the Store Number (1 to 1115): ")
 date1 = st.date_input("Date: Enter date, on Sales forecast needed:")
 Day =  date1.day
@@ -35,25 +35,24 @@ Promo = st.text_input("Promo: Enter a value(0 or 1)")
 Promo2 = st.text_input("Promo2: Enter a value (0 or 1)")
 PerCentDiseaseAffInWeek = st.text_input("PerCentDiseaseAffInWeek: Enter expected % of Disease in that week (0 to 100)")
 PromoInterval = st.selectbox('PromoIntreval: Select one value from list', (['nan', 'Jan,Apr,Jul,Oct', 'Feb,May,Aug,Nov', 'Mar,Jun,Sept,Dec']))
-if Store != "":
-    StoreType = store_new_df.loc[store_new_df.Store == Store, 'StoreType'].values[0]
-    Assortment = store_new_df.loc[store_new_df.Store == Store, 'Assortment'].values[0]
-    AvgSalesPerStore = store_new_df.loc[store_new_df.Store == Store, 'AvgSalesPerStore'].values[0]
-    AvgCustomersPerStore = store_new_df.loc[store_new_df.Store == Store, 'AvgCustomersPerStore'].values[0]
-    MedSalesPerStore = store_new_df.loc[store_new_df.Store == Store, 'MedSalesPerStore'].values[0]
-    MedCustomersPerStore = store_new_df.loc[store_new_df.Store == Store, 'MedCustomersPerStore'].values[0]
-    AvgCustSpentInStore = store_new_df.loc[store_new_df.Store == Store, 'AvgCustSpentInStore'].values[0]
-    #LastWeekSalesPerStore = store_new_df.loc[store_new_df.Store == Store, 'LastWeekSalesPerStore'].values[0]
-    LastWeekCustomersPerStore = store_new_df.loc[store_new_df.Store == Store, 'LastWeekCustomersPerStore'].values[0]
-    Features = [Store,DayOfWeek,Promo,StateHoliday,SchoolHoliday,StoreType,Assortment,CompetitionDistance,CompetitionOpenSinceMonth,CompetitionOpenSinceYear,Promo2,Promo2SinceWeek,Promo2SinceYear,PromoInterval,Year,Month,Week,PerCentDiseaseAffInWeek,AvgSalesPerStore,AvgCustomersPerStore,MedSalesPerStore,MedCustomersPerStore,AvgCustSpentInStore,LastWeekCustomersPerStore]
-    #LastWeekSalesPerStore
+StoreType = store_new_df.loc[store_new_df.Store == Store, 'StoreType'].values[0]
+Assortment = store_new_df.loc[store_new_df.Store == Store, 'Assortment'].values[0]
+AvgSalesPerStore = store_new_df.loc[store_new_df.Store == Store, 'AvgSalesPerStore'].values[0]
+AvgCustomersPerStore = store_new_df.loc[store_new_df.Store == Store, 'AvgCustomersPerStore'].values[0]
+MedSalesPerStore = store_new_df.loc[store_new_df.Store == Store, 'MedSalesPerStore'].values[0]
+MedCustomersPerStore = store_new_df.loc[store_new_df.Store == Store, 'MedCustomersPerStore'].values[0]
+AvgCustSpentInStore = store_new_df.loc[store_new_df.Store == Store, 'AvgCustSpentInStore'].values[0]
+#LastWeekSalesPerStore = store_new_df.loc[store_new_df.Store == Store, 'LastWeekSalesPerStore'].values[0]
+LastWeekCustomersPerStore = store_new_df.loc[store_new_df.Store == Store, 'LastWeekCustomersPerStore'].values[0]
+Features = [Store,DayOfWeek,Promo,StateHoliday,SchoolHoliday,StoreType,Assortment,CompetitionDistance,CompetitionOpenSinceMonth,CompetitionOpenSinceYear,Promo2,Promo2SinceWeek,Promo2SinceYear,PromoInterval,Year,Month,Week,PerCentDiseaseAffInWeek,AvgSalesPerStore,AvgCustomersPerStore,MedSalesPerStore,MedCustomersPerStore,AvgCustSpentInStore,LastWeekCustomersPerStore]
+#LastWeekSalesPerStore
 
-    Query_data = []
-    for ele in Features:
-        Query_data.append(ele)
-    st.write(Query_data)
-    Query_data = np.array(Query_data)
-    Query_data = Query_data[np.newaxis,:]
+Query_data = []
+for ele in Features:
+    Query_data.append(ele)
+st.write(Query_data)
+Query_data = np.array(Query_data)
+Query_data = Query_data[np.newaxis,:]
 
 
 if st.button('Make Sales Prediction'):

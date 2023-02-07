@@ -13,7 +13,7 @@ encoder = LabelEncoder()
 
 # load model
 best_xgboost_model = xgb.XGBRegressor()
-best_xgboost_model.load_model("best_model.json")
+#best_xgboost_model.load_model("best_model.json")
 
 if st.checkbox('Show Training Dataframe'):
     data
@@ -37,7 +37,7 @@ if st.button('Make Prediction'):
     input_species = encoder.transform(np.expand_dims(inp_species, -1))
     inputs = np.expand_dims(
         [int(input_species), input_Length1, input_Length2, input_Length3, input_Height, input_Width], 0)
-    prediction = best_xgboost_model.predict(inputs)
+    prediction = 22 #est_xgboost_model.predict(inputs)
     print("final pred", np.squeeze(prediction, -1))
     st.write(f"Your fish weight is: {np.squeeze(prediction, -1):.2f}g")
 
